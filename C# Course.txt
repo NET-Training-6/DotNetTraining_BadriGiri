@@ -1,0 +1,22 @@
+#Create new console app in VisualStudio:
+dotnet new console -n filename;
+(shift+alt+f):manage code block;
+
+
+#variable in c#
+Number: interger and floating point:
+
+1. Interger 
+byte(1), short(2byte), int(4byte), long(8byte);
+
+2. Floating 
+float, double, decimal;
+
+2. Text variable in c#:
+string, char;
+
+3. Boolean variable in c#:
+bool;
+
+4. Dates and times:
+5. var: which doesnot deals with data types. can be used as a interger, string, double and many more.

@@ -1,13 +1,15 @@
 ﻿internal class Program
 {
-    private static void Main(string[] args)
+    private static void Main()
     {
-        for (int i = 0; i < 10; i++)
+        var number=90;
+        if (number%2==0)
         {
-            string name;
-            Console.WriteLine("enter your name:");
-            name=Console.ReadLine();
-            Console.WriteLine(name);
+            Console.WriteLine(number +" is even");
+        }
+        else
+        {
+                Console.WriteLine(number+" is odd");
         }
     }
 }
