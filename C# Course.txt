@@ -17,6 +17,3 @@ string, char;
 
 3. Boolean variable in c#:
 bool;
-
-4. Dates and times:
-5. var: which doesnot deals with data types. can be used as a interger, string, double and many more.
