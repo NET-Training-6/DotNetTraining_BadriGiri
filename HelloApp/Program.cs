@@ -19,16 +19,18 @@
         // cw: find simple intere
 
 // simple interest cw:
-        // int principle, rate, time;
-        // Console.WriteLine("Enter the principle:\n");
-        // principle=Convert.ToInt32(Console.ReadLine());
-        // Console.WriteLine("Enter the Rate:\n");
-        // rate=Convert.ToInt32(Console.ReadLine());
-        // Console.WriteLine("Enter the time:\n");
-        // time=Convert.ToInt32(Console.ReadLine());
-        // int si;
-        // si=(principle*rate*time)/100;
-        // Console.WriteLine("simple interest is :"+si);
+        int principle, rate, time;
+        Console.WriteLine("Enter the principle:\n");
+        principle=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the Rate:\n");
+        rate=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the time:\n");
+        time=Convert.ToInt32(Console.ReadLine());
+        int si, ci;
+        si=(principle*rate*time)/100;
+        Console.WriteLine("simple interest is :"+si);
+        ci=principle*((1+rate/100)^time-1);
+        Console.WriteLine("Compound interest is : "+ci);
 
 // assigment to check number wheather multiple of 3 and 5
 
