@@ -32,25 +32,57 @@
 
 // assigment of multiple of 3 and 5
 
-        int num;
-        Console.WriteLine("Enter your check number:");
-        num=Convert.ToInt32(Console.ReadLine());
-        if (num %3==0 && num%5==0)
+        // int num;
+        // Console.WriteLine("Enter your check number:");
+        // num=Convert.ToInt32(Console.ReadLine());
+        // if (num %3==0 && num%5==0)
+        // {
+        //     Console.WriteLine(num+" is a multiple of 3 and 5");
+        // }
+        // else if(num%5==0)
+        // {
+        //     Console.WriteLine(num+" is multiple of 5");
+        // }
+        // else if(num%3==0)
+        // {
+        //     Console.WriteLine(num+" is multiple of 3");
+        // }
+        // else
+        // {
+        //     Console.WriteLine(num+" is not multiple of 3 nor 5");
+        // }
+
+
+// Program to calculate BMI 
+        int heightF, heightI, weight;
+        string name;
+        float converIntoMeter, bmi;
+        Console.WriteLine("Enter your Name:\n");
+        name= Console.ReadLine();
+        Console.WriteLine("Enter your weight in KG:");
+        weight=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter your Height in feet and inche: \n");
+        heightF=Convert.ToInt32(Console.ReadLine());
+        heightI=Convert.ToInt32(Console.ReadLine());
+        converIntoMeter=0.3048f*heightF+0.0254f*heightI;
+        bmi=weight/(converIntoMeter*converIntoMeter);
+        Console.WriteLine("The BODY MASS INDEX of "+name+" with Height "+heightF+"feet "+ heightI+"inche"+" and WEIGHT "+weight+" KG is: "+bmi);
+        if(bmi<18.5)
         {
-            Console.WriteLine(num+" is a multiple of 3 and 5");
+            Console.WriteLine("\n ***************Under Weight***************");
         }
-        else if(num%5==0)
+        else if(bmi>18.5 && bmi<25)
         {
-            Console.WriteLine(num+" is multiple of 5");
+            Console.WriteLine("\n ******************Healthy Weight*****************");
         }
-        else if(num%3==0)
+        else if(bmi>25 &&bmi<30)
         {
-            Console.WriteLine(num+" is multiple of 3");
+            Console.WriteLine("\n ****************Over Weight***************");
         }
-        else
-        {
-            Console.WriteLine(num+" is not multiple of 3 nor 5");
+        else{
+            Console.WriteLine("\n **************obesity range***********************");
         }
+        
 
 
     }
