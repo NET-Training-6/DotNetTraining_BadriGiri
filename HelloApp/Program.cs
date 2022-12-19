@@ -30,7 +30,7 @@
         // si=(principle*rate*time)/100;
         // Console.WriteLine("simple interest is :"+si);
 
-// assigment of multiple of 3 and 5
+// assigment to check number wheather multiple of 3 and 5
 
         // int num;
         // Console.WriteLine("Enter your check number:");
