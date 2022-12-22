@@ -19,3 +19,10 @@ string, char;
 
 3. Boolean variable in c#:
 bool;
+4. for date and time variable:
+DateTime;
+
+#classes In c#
+class class_name"{
+    //Members: fields, methods.
+}
