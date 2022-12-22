@@ -4,6 +4,8 @@ dotnet new console -n filename;
 
 
 #variable in c#
+var is used to stored all data types such as float number, interger and string so on. It i a common data types in c# language.
+
 Number: interger and floating point:
 
 1. Interger 
