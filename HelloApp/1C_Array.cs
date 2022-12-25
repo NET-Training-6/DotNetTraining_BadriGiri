@@ -1,14 +1,11 @@
 class ArrayLearner
 {
-    void LearnArrays()
+    public void ArraysAssigment()
     {
-        //One-Dimension Array:
-        byte[] ages={56,34,12,32,12,10};
-        
-        var numbers=new int[100];
-
-        //Multi-dimension Array:
-        double [,] Matrix=new double[3,4];
-
+        string[] names = {"Badri","Ram","Giri","Aran","Shah","Prakesh"};
+        for (int i = 0; i < names.Length; i++)
+        {
+            Console.WriteLine(names[i]);
+        }
     }
 }

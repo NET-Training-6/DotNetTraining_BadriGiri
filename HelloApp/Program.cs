@@ -86,29 +86,34 @@
         // }
         
 
-        Animal al1= new Animal();
-        al1.name="dog";
-        al1.age=12;
-        al1.color="black";
-        al1.weight=40;
-        al1.canFly=false;
-        al1.MethodsAnimal();
+        // Animal al1= new Animal();
+        // al1.name="dog";
+        // al1.age=12;
+        // al1.color="black";
+        // al1.weight=40;
+        // al1.canFly=false;
+        // al1.MethodsAnimal();
 
-        Animal al2= new Animal();
-        al2.name="tiger";
-        al2.age=23;
-        al2.color="yellow";
-        al2.weight=40;
-        al2.canFly=false;
-        al2.MethodsAnimal();
+        // Animal al2= new Animal();
+        // al2.name="tiger";
+        // al2.age=23;
+        // al2.color="yellow";
+        // al2.weight=40;
+        // al2.canFly=false;
+        // al2.MethodsAnimal();
 
-        Animal al3= new Animal();
-        al3.name="pigon";
-        al3.age=3;
-        al3.color="black and brown";
-        al3.weight=2;
-        al3.canFly=true;
-        al3.MethodsAnimal();
+        // Animal al3= new Animal();
+        // al3.name="pigon";
+        // al3.age=3;
+        // al3.color="black and brown";
+        // al3.weight=2;
+        // al3.canFly=true;
+        // al3.MethodsAnimal();
+
+
+        //Array Assigment:
+        ArrayLearner al=new ArrayLearner();
+        al.ArraysAssigment();
 
 
 

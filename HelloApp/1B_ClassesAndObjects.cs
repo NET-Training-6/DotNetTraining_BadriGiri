@@ -1,3 +1,4 @@
+namespace Animal;
 class Animal
 {
     public string name;
