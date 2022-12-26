@@ -1,3 +1,4 @@
+namespace ArrayTest;
 class ArrayLearner
 {
     public void ArraysAssigment()
@@ -7,16 +8,23 @@ class ArrayLearner
         {
             Console.WriteLine($"{names[i]}\n");
         }
-        var salaries= new double[6];
+
+        // Program to find maximum Salary from the list of Array:
+        var salaries= new double[4];
         Console.WriteLine("Enter Salary:\n");
         for (int s = 0; s < salaries.Length; s++)
         {
             salaries[s]=double.Parse(Console.ReadLine());
         }
-        Console.WriteLine("The recorded list of Salary are:\n");
+        double maxSalary=0;
+        // Console.WriteLine("The recorded list of Salary are:\n");
         foreach (var salary in salaries)
         {
-            Console.WriteLine(salary);
+           if(salary>maxSalary)
+           {
+                maxSalary=salary;
+           }
         }
+        Console.WriteLine("The Maximum Salary is: \n"+maxSalary);
     }
 }

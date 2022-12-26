@@ -1,4 +1,5 @@
-﻿internal class Program
+﻿using ArrayTest;
+internal class Program
 {
     private static void Main()
      {
@@ -111,9 +112,9 @@
         // al3.MethodsAnimal();
 
 
-        //Array Assigment:
-        ArrayLearner al=new ArrayLearner();
-        al.ArraysAssigment();
+        // //Array Assigment:
+        // ArrayLearner al=new ArrayLearner();
+        // al.ArraysAssigment();
 
 
 
