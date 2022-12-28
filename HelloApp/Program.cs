@@ -116,6 +116,12 @@ internal class Program
         // ArrayLearner al=new ArrayLearner();
         // al.ArraysAssigment();
 
+        // Conditional Assigment 
+        ConditionalLearner cl=new ConditionalLearner();
+        cl.IncPattern();
+        cl.DecPattern();
+        cl.HashPattern();
+
 
 
     }
