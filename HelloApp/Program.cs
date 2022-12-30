@@ -16,7 +16,7 @@ internal class Program
     //     {
     //             Console.WriteLine(number+" is odd");
     //     }
-
+//===============================================================================================================================
         // cw: find simple intere
 
 // simple interest cw:
@@ -32,6 +32,7 @@ internal class Program
         // Console.WriteLine("simple interest is :"+si);
         // ci=principle*((1+rate/100)^time-1);
         // Console.WriteLine("Compound interest is : "+ci);
+//===============================================================================================================================
 
 // assigment to check number wheather multiple of 3 and 5
 
@@ -54,7 +55,7 @@ internal class Program
         // {
         //     Console.WriteLine(num+" is not multiple of 3 nor 5");
         // }
-
+//===============================================================================================================================
 
 // Program to calculate BMI 
         // int heightF, heightI, weight;
@@ -85,7 +86,7 @@ internal class Program
         // else{
         //     Console.WriteLine("\n **************obesity range***********************");
         // }
-        
+//================================================================================================================================        
 
         // Animal al1= new Animal();
         // al1.name="dog";
@@ -103,6 +104,7 @@ internal class Program
         // al2.canFly=false;
         // al2.MethodsAnimal();
 
+
         // Animal al3= new Animal();
         // al3.name="pigon";
         // al3.age=3;
@@ -110,11 +112,12 @@ internal class Program
         // al3.weight=2;
         // al3.canFly=true;
         // al3.MethodsAnimal();
-
+//========================================================================================================================================
 
         // //Array Assigment:
         // ArrayLearner al=new ArrayLearner();
         // al.ArraysAssigment();
+//========================================================================================================================================
 
         // Conditional Assigment 
         ConditionalLearner cl=new ConditionalLearner();
