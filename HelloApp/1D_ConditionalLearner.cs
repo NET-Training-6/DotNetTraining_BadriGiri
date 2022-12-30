@@ -1,3 +1,4 @@
+namespace ConditionalAssigment;
 class ConditionalLearner
 {
    public void IncPattern()

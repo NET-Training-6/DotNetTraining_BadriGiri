@@ -30,3 +30,6 @@ class class_name"{
 #Array In c#:
 - Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
 To declare an array, define the variable type with square brackets[]:
+
+ #Managed and unmanaged code:
+ - C# language is a managed code because it kills unnecessary memory occupied by program after completion of program while in case of C and C++ Programming language user need to clear memory occupied by program using destructor  and similar freatures. 

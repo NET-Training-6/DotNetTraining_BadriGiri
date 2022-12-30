@@ -119,12 +119,20 @@ internal class Program
         // al.ArraysAssigment();
 //========================================================================================================================================
 
-        // Conditional Assigment 
-        ConditionalLearner cl=new ConditionalLearner();
-        cl.IncPattern();
-        cl.DecPattern();
-        cl.HashPattern();
-
+        // // Conditional Assigment 
+        // ConditionalLearner cl=new ConditionalLearner();
+        // cl.IncPattern();
+        // cl.DecPattern();
+        // cl.HashPattern();
+//=======================================================================================================================================
+        //check number wheather it is odd or even:
+        // MethodLearner ml=new MethodLearner();
+        // var x= ml.NumChecker(45);
+        // Console.WriteLine(x);
+//=======================================================================================================================================
+        MethodLearner ml= new MethodLearner();
+        int[] num ={48,5,21,1,74,80,99};
+        Console.WriteLine($"Mean: {ml.Mean(num)}");
 
 
     }
