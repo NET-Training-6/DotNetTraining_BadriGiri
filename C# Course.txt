@@ -33,3 +33,6 @@ To declare an array, define the variable type with square brackets[]:
 
  #Managed and unmanaged code:
  - C# language is a managed code because it kills unnecessary memory occupied by program after completion of program while in case of C and C++ Programming language user need to clear memory occupied by program using destructor  and similar freatures. 
+
+#params:
+params is used to pass agruments in methods that takes parameters using(,) eg: (12, 45).

@@ -1,7 +1,7 @@
 ﻿using ArrayTest;
 internal class Program
 {
-    private static void Main()
+    private static void Main1()
      {
     //     int number;
     //     Console.WriteLine("Enter number");
@@ -130,9 +130,14 @@ internal class Program
         // var x= ml.NumChecker(45);
         // Console.WriteLine(x);
 //=======================================================================================================================================
-        MethodLearner ml= new MethodLearner();
-        int[] num ={48,5,21,1,74,80,99};
-        Console.WriteLine($"Mean: {ml.Mean(num)}");
+        // MethodLearner ml= new MethodLearner();
+        // int[] num ={48,5,21,1,74,80,99};
+        // Console.WriteLine($"Mean: {ml.Mean(num)}");
+
+        //using params:
+        // MethodLearner ml=new MethodLearner();
+        // ml.MinimumNumber(4,8,5,72,98,45,2);
+        // Console.WriteLine(ml.MinimumNumber());
 
 
     }
