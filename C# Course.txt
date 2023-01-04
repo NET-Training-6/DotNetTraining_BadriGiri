@@ -36,3 +36,8 @@ To declare an array, define the variable type with square brackets[]:
 
 #params:
 params is used to pass agruments in methods that takes parameters using(,) eg: (12, 45).
+
+#Method Overriding
+in c#, when parent class and based class have same methods, and we need to change the same method properties in based class then we override the method using different techquies such as: adding (new) before datatype in base class, using keyword (Virture) before data types, using keyword override.
+eg: public (new or Virture or override) void PrintDetails();
+while Overriding parent class should have Virture keyword before datatype and base class will have (new or Virture or override) before datatype.

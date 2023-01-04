@@ -1,0 +1,27 @@
+clas A //A is a base/parent/super class
+{
+    public int x;
+
+}
+class B:A //single level //B is a derived/child/sub class (B:A means B inherits A, Mean A is a father of B)
+{
+    public string y;
+
+}
+class C:B //Multi-level 
+{
+    public byte z;
+    public void Test(){}
+}
+
+interface ID
+{
+
+}
+
+
+//Multiple inheritance
+class E:B,ID //(E:B,ID means E inherits B and implements ID)
+{
+
+}
