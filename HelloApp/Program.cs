@@ -1,7 +1,6 @@
-﻿using ArrayTest;
-internal class Program
+﻿public class Program
 {
-    private static void Main1()
+     static void Main()
      {
     //     int number;
     //     Console.WriteLine("Enter number");
@@ -138,6 +137,12 @@ internal class Program
         // MethodLearner ml=new MethodLearner();
         // ml.MinimumNumber(4,8,5,72,98,45,2);
         // Console.WriteLine(ml.MinimumNumber());
+
+//========================================================================================================================================
+
+        paragraph p=new paragraph();
+        p.countSentences();
+        p.countWords();
 
 
     }
