@@ -143,6 +143,7 @@
         paragraph p=new paragraph();
         p.countSentences();
         p.countWords();
+        p.GetFrequciesOfCharacters();
 
 
     }
