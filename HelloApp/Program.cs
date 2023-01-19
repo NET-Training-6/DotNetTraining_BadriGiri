@@ -140,10 +140,14 @@
 
 //========================================================================================================================================
 
-        paragraph p=new paragraph();
-        p.countSentences();
-        p.countWords();
-        p.GetFrequciesOfCharacters();
+        // paragraph p=new paragraph();
+        // p.countSentences();
+        // p.countWords();
+        // p.GetFrequciesOfCharacters();
+
+        Linq linq = new();
+        // linq.Test();  
+        linq.LearnToQueryComplexCollection();
 
 
     }
