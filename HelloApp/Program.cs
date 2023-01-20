@@ -150,6 +150,10 @@
         linq.LearnToQueryComplexCollection();
         linq.asianCountries();
 
+        FileAndDirectory fd=new FileAndDirectory();
+        fd.LearnFiles();
+        fd.CreateFolder();
+
 
     }
 }
