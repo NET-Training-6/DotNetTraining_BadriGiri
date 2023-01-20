@@ -148,6 +148,7 @@
         Linq linq = new();
         // linq.Test();  
         linq.LearnToQueryComplexCollection();
+        linq.asianCountries();
 
 
     }

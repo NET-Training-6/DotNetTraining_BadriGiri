@@ -17,30 +17,70 @@ class Linq
         new Employee() {Name ="Prakesh Raut", Age=20,Department="R&D", Designation="QA"}
     };
 
+List<Country> countries = new() 
+{ 
+    new Country 
+    { 
+        Name = "Nepal",
+        Continent = "Asia",
+        Area = 17823783.23,
+        GDP = 79247984728
+    },
+    new Country 
+    { 
+        Name = "India",
+        Continent = "Asia",
+        Area = 1782378323,
+        GDP = 79247984728000
+    },
+    new Country 
+    { 
+        Name = "USA",
+        Continent = "North America",
+        Area = 9817823783.23,
+        GDP = 9999997823798472
+    }
+};
+
+public void asianCountries()
+{
+    var asianCountry= from country in countries
+                    where country.Continent=="Asia"
+                    select country;
+    
+    Console.WriteLine("The list of Asian Countries are:");
+    foreach (var item in asianCountry)
+    {
+        Console.WriteLine($"{item.Name}");
+        
+    }
+
+
+}
     public void Test()
     {
         // Filters
         //1. Get all even numbers in "numbers"
         var evenNums = numbers.Where(num => num % 2 == 0); //method Syntax
 
-        evenNums= from num in numbers       //expression Syntax
-                    where num%2==0
-                    select num;
+        // evenNums= from num in numbers       //expression Syntax
+        //             where num%2==0
+        //             select num;
 
 
 
         //2. Get all odd numbers in "numbers"
         var oddNums = numbers.Where(num => num % 2 != 0);
 
-        oddNums= from num in numbers
-                where(num % 2 != 0)
-                select  num;
+        // oddNums= from num in numbers
+        //         where(num % 2 != 0)
+        //         select  num;
 
         //3. Get all numbers which ends with "0"        
         var numsEnding0 = numbers.Where(num => num.ToString().EndsWith("0"));
-         numsEnding0= from num in numbers
-                        where num.ToString().EndsWith("0")
-                        select num;
+        //  numsEnding0= from num in numbers
+        //                 where num.ToString().EndsWith("0")
+        //                 select num;
 
         // Projections
         //4. Get squares of all numbers in "numbers" array
@@ -109,5 +149,14 @@ public class Employee
     public int Age { get; set; }
     public string Department { get; set; }
     public string Designation { get; set; }
+
+}
+
+public class Country
+{
+    public string Name { get; set; }
+    public double Area { get; set; }
+    public string Continent { get; set; }
+    public double GDP { get; set; }
 
 }
