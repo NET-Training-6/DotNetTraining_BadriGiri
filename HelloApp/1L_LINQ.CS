@@ -57,6 +57,15 @@ public void asianCountries()
 
 
 }
+
+public void PoorestCountries()
+{
+    var PoorestCountry= from Country in countries
+                        orderby Country.GDP
+                        select Country;
+    
+                        
+}
     public void Test()
     {
         // Filters

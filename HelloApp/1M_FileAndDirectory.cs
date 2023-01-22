@@ -37,4 +37,16 @@ class FileAndDirectory
 
 
     }
+
+    public void CreateFolderWithText()
+    {
+        var nameFolder=new[] {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T'};
+        foreach (var name in nameFolder)
+        {
+            var folderPath20=@$"E:\Documents\Dotnet Programming\DotNetTraining_BadriGiri\HelloApp\{name}";
+            Directory.CreateDirectory(folderPath20);
+            var filePath=@$"{folderPath20}\{name}.txt";
+            File.WriteAllText(filePath, DateTime.Now.ToString("yyyy dd, MMMM"));
+        }
+    }
 }

@@ -151,8 +151,10 @@
         linq.asianCountries();
 
         FileAndDirectory fd=new FileAndDirectory();
-        fd.LearnFiles();
-        fd.CreateFolder();
+        // fd.LearnFiles();
+        // fd.CreateFolder();
+        //assigment:
+        fd.CreateFolderWithText();
 
 
     }
