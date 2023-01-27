@@ -5,4 +5,10 @@ Browser Development
 2. CSS =>(Cascading Style Sheets)=> Design
 3. Javascript => (Interactivity)
 
+CSS is applied in three different ways:
+1. Tag Selector(TagName)
+2. ID Selector (#IdName)
+3. Class Selector(.ClassName)
 
+Command for creating Web Applicaton:
+dotnet new webapp -n WebRazorPages
