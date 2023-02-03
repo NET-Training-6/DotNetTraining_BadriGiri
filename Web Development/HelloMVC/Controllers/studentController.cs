@@ -11,6 +11,11 @@ namespace HelloMVC.Controllers
 
         public IActionResult Test()
         {
+            int[] numbers = { 12, 121, 423, 14, 21, 6 };
+            return View(numbers);
+        }
+        public IActionResult Action()
+        {
             return View();
         }
     }

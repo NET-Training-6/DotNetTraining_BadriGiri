@@ -1,1 +1,61 @@
-﻿<h1>This is testing</h1>
+﻿@model int[]  //this method of passing data from controllers to view is called data binding. while, we should  give the same data type.
+
+
+
+<h1>Name of student:</h1>
+
+@{
+    string[] Names = { "Raj Aran", "Raj Chaudhary", "laK Bhusal", "Prain Bhanri" };
+    var numbers = Model; //we can defined model or else we can directly used Model. Capital M represent the data coming from controller. 
+    var evenNumber = numbers.Where(x => x % 2 == 0);
+}
+
+<h3>List Of all numbers:</h3>
+<ol>
+    @foreach(int number in numbers)
+    {
+        <li>@number</li>
+    }
+</ol>
+
+<h3>Evens</h3>
+<ol>
+    @foreach (int number in numbers)
+    {
+        if(number%2==0)
+        {
+            <li>@number</li>
+        }
+      
+    }
+</ol>
+
+<h3>Odds</h3>
+<ol>
+    @foreach (int number in numbers)
+    {
+        if (number % 2 == 1)
+        {
+            <li>@number</li>
+        }
+
+    }
+</ol>
+
+
+<ol>
+    <li>Badri Raj Aran</li>
+    <li>Rajesh Chaudhary</li>
+    <li>TilaK Bhusal</li>
+    <li>Prabin Bhandari</li>
+</ol>
+
+<ol>
+    
+        @foreach(string name in Names)
+        {
+            <li>@name</li>
+        }
+
+    
+</ol>
