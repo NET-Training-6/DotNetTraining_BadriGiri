@@ -1,0 +1,52 @@
+﻿@using WorkForceManagement.web.Enum;
+@model Employee
+@{
+    
+    string[] genders = Enum.GetNames<Gender>();
+}
+
+
+
+<form class="row g-3" action="/employee/add" method="post">
+    <div class="col-md-4">
+        <label for="Name" class="form-label">Name</label>
+        <input asp-for=Name class="form-control">
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Contact" class="form-label">Contact</label>
+        <input asp-for=Contact class="form-control>
+    </div>
+    <div class="col-md-4">
+        <label for="Address" class="form-label">Address</label>
+        <input asp-for="Address" class="form-control">
+    </div>
+       
+    <div>
+        <label for="Gender" class="form-label">Gender</label>
+        <div>
+            @foreach (string g in genders)
+            {
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="@g" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">@g</label>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-12">
+        <label for="inputAddress" class="form-label">Designation</label>
+        <input type="text" class="form-control">
+    </div>
+    <div class="col-md-6">
+        <label for="date" class="form-label">Date Of Birth</label>
+        <input type="date" class="form-control">
+    </div>
+    <div class="col-md-6">
+        <label for="date" class="form-label">Joined Date</label>
+        <input type="date" class="form-control">
+    </div>
+    <div class="col-md-6">
+        <label for="date" class="form-label float-end">Save</label>
+        <input type="submit" class="form-control">
+    </div>
+</form>

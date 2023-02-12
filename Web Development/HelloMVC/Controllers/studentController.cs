@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HelloMVC.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HelloMVC.Controllers
 {
@@ -6,7 +7,35 @@ namespace HelloMVC.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            //list of students
+            Student student1= new() 
+            { 
+              Name="Badri Giri",
+              Address="Sanothimi", 
+              Gender=Sex.Male,
+              Email="Badriaran10@gmail.com", 
+              BOD= new DateTime(1999-11-15)
+             };
+            Student student2 = new()
+            {
+                Name = "Tolak Bhusal",
+                Gender=Sex.Male,    
+                Address = "Kupandol",
+                Email = "tilakbhusal90@gmail.com",
+                BOD = new DateTime(1999 - 10 - 15)
+            };
+            Student student3 = new()
+            {
+                Name = "Prabin Bhandari",
+                Gender = Sex.Male,
+                Address = "Kupandol",
+                Email = "tbhusal90@gmail.com",
+                BOD = new DateTime(1999 - 10 - 15)
+            };
+
+            List<Student> students = new() { student1,student2, student3 };
+
+            return View(students);
         }
 
         public IActionResult Test()

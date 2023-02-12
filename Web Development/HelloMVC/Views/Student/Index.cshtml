@@ -1,37 +1,25 @@
-﻿<h1>This is student Table</h1>
+﻿
 
-<div>
+@model List<Student>
+
     <table class="table">
-        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Email</th>
+            <th scope="col">BOD</th>
+            <th scope="col">Gender</th>
+        </tr>
+        @foreach(Student s in Model)
+        {
             <tr>
-                <th scope="col">SN</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <td>@s.Name</td>
+                <td>@s.Address</td>
+                <td>@s.Email</td>
+                <td>@s.BOD</td>
+                <td>@s.Gender</td>
             </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>Facebook</td>
-            
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>Instgram</td>
-               
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry </td>
-                <td>Birds</td>
-                <td>Email</td>
-               
-            </tr>
-        </tbody>
+        
+        }
+
     </table>
-</div>

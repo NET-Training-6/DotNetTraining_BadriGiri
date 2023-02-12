@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WorkForceManagement.web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WorkForceManagement.web.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">  
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <img src="/images/logo2.png" class="img-thumbnail" height:8px width:8px/>
+                    </div>
+                    <div class="dropdown col-sm-2">
+                        <button class="btn  dropdown-toggle btn-outline-dark bi bi-people" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Employee
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item bi bi-card-checklist" type="button" href="/employee/index">Employee List</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" type="button" href="/employee/Add"> &#43; Add New Employee</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+               
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted text-center">
+        <div class="container">
+            &copy; @DateTime.Now.Year - WorkForceManagement(By .NET Training)
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
