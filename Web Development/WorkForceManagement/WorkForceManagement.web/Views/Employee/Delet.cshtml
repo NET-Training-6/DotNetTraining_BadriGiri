@@ -1,0 +1,10 @@
+﻿@model Employee
+
+
+
+<form asp-action="delet" method="post" class="text-center mt-2 text-uppercase">
+    <h1>Are you sure want to delet data for @Model.Name ?</h1>
+    <input type="hidden" asp-for="ID"/>
+    <a asp-action="index" class=" btn btn-success">Cancel</a>
+    <button type="submit" class=" btn btn-danger">Delet</button>
+</form>

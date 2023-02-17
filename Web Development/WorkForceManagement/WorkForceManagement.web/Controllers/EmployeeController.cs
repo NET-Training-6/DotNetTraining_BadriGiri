@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using WorkForceManagement.web.Data;
+using WorkForceManagement.web.Helpers;
 using WorkForceManagement.web.Models;
 
 namespace WorkForceManagement.web.Controllers
@@ -29,7 +30,6 @@ namespace WorkForceManagement.web.Controllers
         public IActionResult Add(int id) 
         {
             var employee= db.Employees.Find(id);
-            db.SaveChanges();
             return View(employee);
             
 
@@ -38,11 +38,33 @@ namespace WorkForceManagement.web.Controllers
         [HttpPost]
         public IActionResult Add(Employee employee)
         {
-           db.Employees.Add(employee);
+            var relativePath = ProfileImageHelper.SaveImage(employee.ProfileImage);
+            employee.ProfileImagePath= relativePath;
+
+            db.Employees.Add(employee);
+            db.SaveChanges();
             return RedirectToAction("Index");
 
 
         }
+
+        [HttpGet]
+        public IActionResult Delet(int id)
+        {
+            var employee = db.Employees.Find(id);
+            return View(employee);
+        }
+
+        [HttpPost]
+        public IActionResult Delet(Employee employee)
+        {
+            db.Employees.Remove(employee);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+
 
         public IActionResult GetData()
         {
