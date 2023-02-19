@@ -13,8 +13,10 @@ public class ProfileImageHelper
         var currerntAppPath=Directory.GetCurrentDirectory();
         var fullFilePath=Path.Combine(currerntAppPath, $"wwwroot/{relativePath}");
 
-        var stream=File.Create(fullFilePath);   
+       using var stream=File.Create(fullFilePath);   
         ProfileImage.CopyTo(stream);
+
+       
 
         //return relative path to save to db
         return relativePath;
