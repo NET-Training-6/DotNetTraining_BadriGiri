@@ -7,6 +7,8 @@ namespace WorkForceManagement.web.Data;
 public class WorkForceContext: DbContext
 {
     public DbSet<Employee> Employees { get; set; }
+    public DbSet<Department> Departments { get; set; }
+    public DbSet<Designation> DesignationsTable { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

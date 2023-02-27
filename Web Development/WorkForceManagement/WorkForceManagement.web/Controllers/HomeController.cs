@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WorkForceManagement.web.Models;
+using WorkForceManagement.web.ViewModels;
 
 namespace WorkForceManagement.web.Controllers
 {

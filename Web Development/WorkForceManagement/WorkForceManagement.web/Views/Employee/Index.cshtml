@@ -1,5 +1,5 @@
 ﻿
-@model List<Employee> 
+@model List<EmployeeViewModel> 
 
 <table class="table">
     <tr>
@@ -11,7 +11,7 @@
         <th scope="col">Department</th>
         <th></th>
     </tr>
-    @foreach (Employee e in Model)
+    @foreach (EmployeeViewModel e in Model)
     {
         <tr>
             <td>
@@ -26,7 +26,7 @@
             <td>@e.Dob</td>
             <td>@e.Gender</td>
             
-            <td>@e.Department</td>
+            <td>@e.DepartmentName</td>
             <td>
                 <a href="/employee/details/@e.ID"><i class="bi bi-eye"></i> </a>
                 <a asp-action="Edit" asp-route-id="@e.ID"><i class="bi bi-pen"></i> </a>

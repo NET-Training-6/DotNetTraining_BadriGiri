@@ -2,7 +2,7 @@ HRM
 --Models (Entities)
 --Employees(ID, Name, Address, Gender, JointDate, Department, Contact, DOB, Designation)
 --Contact
---Designations(ID, Title, Description)
+--Designations(ID, Title, Description, PayRange)
 --Department(ID, Name, Desc, EstablishedDate)
 --Benefits(Salary, Bonus, PF, SSF, Year,Insurance, Tax)
 

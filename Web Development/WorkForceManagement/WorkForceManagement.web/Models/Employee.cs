@@ -22,12 +22,14 @@ public class Employee
 
     [DataType(DataType.Date)]
     public DateTime JoinDate { get; set; }
-    public string Department { get; set; } = string.Empty;
+
 
     [DisplayName("Your Profile Image")]
     [NotMapped]
     public IFormFile? ProfileImage { get; set; }
 
     public string ProfileImagePath { get; set; } = string.Empty;
-
+    // public string Designation { get; set; } = string.Empty;
+    public int? DepartmentId { get; set; } 
+    public Department Department { get; set; }
 }

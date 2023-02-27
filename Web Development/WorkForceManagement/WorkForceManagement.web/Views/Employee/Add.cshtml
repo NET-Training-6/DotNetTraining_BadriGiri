@@ -1,72 +1,85 @@
-﻿@using WorkForceManagement.web.Enum;
-@model Employee
+﻿@model EmployeeViewModel
 @{
 
     string[] genders = Enum.GetNames<Gender>();
+
+    var departments = ViewData["deps"] as IEnumerable<SelectListItem>;
+
+    SelectListItem[] Designations=
+            {
+                new SelectListItem{Text="---Select your department---", Value="rnd"},
+                new SelectListItem{Text="Research And Development", Value="rnd"},
+                new SelectListItem{Text="Operations", Value="operations"},
+                new SelectListItem{Text="Accounting", Value="accounting"},
+                new SelectListItem{Text="Science and Technology", Value="operations"}
+
+    };
+
 }
 
 
-<div class="card border-2"></div>
-<div class="card-body">
-    <form class="row g-3" action="/employee/add" method="post" enctype="multipart/form-data">
-        @* <div asp-validation-summary="All" class="text-danger"></div>*@
+<div class="card border-2">
+    <div class="card-body">
+        <form class="row g-3" action="/employee/add" method="post" enctype="multipart/form-data">
+            @* <div asp-validation-summary="All" class="text-danger"></div>*@
 
-        <div class="col-md-4">
-            <label asp-for="Name" class="form-label">Name</label>
-            <input asp-for=Name class="form-control">
-            <span asp-validation-for="Name" class="text-danger"></span>
-        </div>
-        <div class="col-md-4">
-            <label asp-for="Contact" class="form-label">Contact</label>
-            <input asp-for=Contact class="form-control" />
-            <span asp-validation-for="Contact" class="text-danger"></span>
-        </div>
-        <div class="col-md-4">
-            <label for="Address" class="form-label">Address</label>
-            <input asp-for="Address" class="form-control" />
-            <span asp-validation-for="Address" class="text-danger"></span>
-        </div>
+            <div class="col-md-4">
+                <label asp-for="Name" class="form-label">Name</label>
+                <input asp-for=Name class="form-control">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Contact" class="form-label">Contact</label>
+                <input asp-for=Contact class="form-control" />
+                <span asp-validation-for="Contact" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label for="Address" class="form-label">Address</label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
 
-        <div>
-            <label for="Gender" class="form-label">Gender</label>
             <div>
-                @foreach (string g in genders)
-                {
+                <label for="Gender" class="form-label">Gender</label>
+                <div>
+                    @foreach (string g in genders)
+                    {
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="@g" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">@g</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="@g" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">@g</label>
+                        </div>
+                    }
+                </div>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="col-12">
+                <label asp-for="Department">Department</label>
+                <select asp-for="Department" asp-items=departments class="form-control"></select>
+                <span asp-items="departments" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Dob" class="form-label">Date Of Birth</label>
+                <input asp-for="Dob" class="form-control">
+                <span asp-validation-for="Dob" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="JoinDate" class="form-label">Joined Date</label>
+                <input asp-for="JoinDate" class="form-control">
+                <span asp-validation-for="JoinDate" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class=" col-md-6">
+                        <label for="formFile" class="form-label"></label>
+                        <input class="form-control" asp-for="ProfileImage">
                     </div>
-                }
-            </div>
-            <span asp-validation-for="Gender" class="text-danger"></span>
-        </div>
-        <div class="col-12">
-            <label asp-for="Department">Department</label>
-            <input asp-for="Department" class="form-control">
-            <span asp-validation-for="Department" class="text-danger"></span>
-        </div>
-        <div class="col-md-6">
-            <label asp-for="Dob" class="form-label">Date Of Birth</label>
-            <input asp-for="Dob" class="form-control">
-            <span asp-validation-for="Dob" class="text-danger"></span>
-        </div>
-        <div class="col-md-6">
-            <label asp-for="JoinDate" class="form-label">Joined Date</label>
-            <input asp-for="JoinDate" class="form-control">
-            <span asp-validation-for="JoinDate" class="text-danger"></span>
-        </div>
-        <div class="col-md-6">
-            <div class="row">
-                <div class=" col-md-6">
-                    <label for="formFile" class="form-label"></label>
-                    <input class="form-control" asp-for="ProfileImage">
-                </div>
-                <div class="col-md-6">
-                    <button type="submit" class="form-control btn-primary">Save</button>
+                    <div class="col-md-6">
+                        <button type="submit" class="form-control btn-primary">Save</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 </div>

@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Data.SqlClient;
 using WorkForceManagement.web.Data;
 using WorkForceManagement.web.Helpers;
+using WorkForceManagement.web.Mapper;
 using WorkForceManagement.web.Models;
+using WorkForceManagement.web.ViewModels;
 
 namespace WorkForceManagement.web.Controllers
 {
@@ -13,38 +16,44 @@ namespace WorkForceManagement.web.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-           
-
-            List<Employee> employeeList = db.Employees.ToList(); 
-            return View(employeeList);
+            List<Employee> employees = db.Employees.ToList();
+            List<EmployeeViewModel> employeesViewModels = employees.MapToViewModel();
+            return View(employeesViewModels);
         }
 
         [HttpGet]
         public IActionResult Details(int id)
         {
             var employee=db.Employees.Find(id);
-            return View(employee);
+            var employeeViewModel = employee.MapToViewModel();
+            return View(employeeViewModel);
         }
 
         [HttpGet]
-        public IActionResult Add(int id) 
+        public IActionResult Add() 
         {
-            var employee= db.Employees.Find(id);
-            return View(employee);
+            var departments=db.Departments.ToList();
+            var depsSelectList = departments.Select(x => new SelectListItem { Text = x.Name, Value = x.ID.ToString() }).ToList();
+            depsSelectList.Add(new SelectListItem { Text = "--Select Department--", Selected = true });
+
+            ViewData["Deps"] = depsSelectList;
+
+            return View();
             
 
         }
 
         [HttpPost]
-        public IActionResult Add(Employee employee)
+        public IActionResult Add(EmployeeViewModel employeeViewModel)
         {
-            var relativePath = ProfileImageHelper.SaveImage(employee.ProfileImage);
-            employee.ProfileImagePath= relativePath;
+            var relativePath = ProfileImageHelper.SaveImage(employeeViewModel.ProfileImage);
+            var employee = employeeViewModel.MapToModel();
 
+            employee.ProfileImagePath = relativePath;
             db.Employees.Add(employee);
             db.SaveChanges();
-            return RedirectToAction("Index");
 
+            return RedirectToAction("Index");
 
         }
 
@@ -52,12 +61,14 @@ namespace WorkForceManagement.web.Controllers
         public IActionResult Delet(int id)
         {
             var employee = db.Employees.Find(id);
-            return View(employee);
+            var employeeViewModel = employee.MapToViewModel();
+            return View(employeeViewModel);
         }
 
         [HttpPost]
-        public IActionResult Delet(Employee employee)
+        public IActionResult Delet(EmployeeViewModel employeeViewModel)
         {
+            var employee = employeeViewModel.MapToModel();
             db.Employees.Remove(employee);
             db.SaveChanges();
 

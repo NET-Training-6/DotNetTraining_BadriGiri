@@ -1,0 +1,11 @@
+﻿@model Department
+
+<form asp-action="delete" method="post" class="text-center mt-2">
+    <input type="hidden" asp-for="ID" />
+    <h1>Are You sure want to Delet @Model.Name</h1>
+    <input type="hidden" asp-for="ID" />
+
+    <a href="/department/index" class="btn btn-primary">Cancel</a>
+    <button type="submit" class="btn btn-danger">Delete</button>
+
+</form>
