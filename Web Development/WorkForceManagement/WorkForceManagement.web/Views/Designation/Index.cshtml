@@ -1,1 +1,31 @@
-﻿<h1>This is designation controller index action</h1>
+﻿@model List<Designation>;
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Descriptions</th>
+            <th scope="col">Pay-Range</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Designation d in Model)
+        {
+            <tr>
+                <td>@d.ID</td>
+                <td>@d.Title</td>
+                <td>@d.Description</td>
+                <td>@d.PayRange</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@d.ID"><i class="bi bi-pen "></i> </a>
+                    <a asp-action="Delete" asp-route-id="@d.ID"><i class="bi bi-trash text-danger"></i> </a>
+                </td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>

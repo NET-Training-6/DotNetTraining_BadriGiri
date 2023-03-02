@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WorkForceManagement.web.Data;
 
@@ -11,9 +12,11 @@ using WorkForceManagement.web.Data;
 namespace WorkForceManagement.web.Migrations
 {
     [DbContext(typeof(WorkForceContext))]
-    partial class WorkForceContextModelSnapshot : ModelSnapshot
+    [Migration("20230302052922_PayRange")]
+    partial class PayRange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
