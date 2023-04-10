@@ -45,9 +45,10 @@ namespace WorkForceManagement.web.Controllers
         public async Task<IActionResult> AssignRole(String userId)
         {
             var user= await _userManager.FindByIdAsync(userId);
-            var roles = _roleManager.Roles.ToList();
+            var allRoles = _roleManager.Roles.ToList();
 
-            return View((user, roles));
+            var assignedRoles= await _userManager.GetRolesAsync(user)as List<string>;
+            return View((user,assignedRoles, allRoles));
         }
         [HttpPost]
         public async Task<IActionResult> AssignRole(string userId, string[] roles)

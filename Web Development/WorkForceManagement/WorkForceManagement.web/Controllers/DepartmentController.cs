@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WorkForceManagement.web.Data;
 using WorkForceManagement.web.Models;
 
 namespace WorkForceManagement.web.Controllers
 {
+    [Authorize]
     public class DepartmentController : Controller
     {
         WorkForceContext db = new WorkForceContext();
