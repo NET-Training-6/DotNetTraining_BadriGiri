@@ -25,7 +25,7 @@ namespace WorkForceManagement.web.Controllers
             if(department is null && !ModelState.IsValid)
                     return Problem("to be inserted department object is null");
 
-            db.Add(department);
+            db.Departments.Add(department);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

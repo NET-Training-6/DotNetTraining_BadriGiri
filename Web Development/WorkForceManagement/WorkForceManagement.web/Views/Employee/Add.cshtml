@@ -5,6 +5,7 @@
 
     var departments = ViewData["deps"] as IEnumerable<SelectListItem>;
 
+    @* //manuall dropdown
     SelectListItem[] Designations=
             {
                 new SelectListItem{Text="---Select your department---", Value="rnd"},
@@ -13,7 +14,10 @@
                 new SelectListItem{Text="Accounting", Value="accounting"},
                 new SelectListItem{Text="Science and Technology", Value="operations"}
 
-    };
+    };*@
+
+    //dropdown for designation in Add emoloyee view
+    var Designations = ViewData["Des"] as IEnumerable<SelectListItem>;
 
 }
 

@@ -35,8 +35,11 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item bi bi-card-checklist" type="button" href="/department/index">All List</a></li>
-                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" type="button" href="/department/Add"> &#43; Add New Department</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item bi bi-card-checklist" type="button" href="/auth/Roles">Roles</a></li>
+                            <li><a class="dropdown-item" type="button" href="/auth/AddRole"> &#43; Add Role</a></li>
+
 
                         </ul>
                     </div>
@@ -51,6 +54,11 @@
 
                         </ul>
                     </div>
+                    <div class="btn col-sm-2" >
+                        <partial name="_LoginPartial">
+
+                    </div>
+
                 </div>
 
             </div>

@@ -13,3 +13,7 @@ Data Access(DataBase Programming)
 --DateBases: 
 ---Relational Databases: *Microsoft SQL Server, SQlite, Postgres, Mysql, Oracle etc.
 ---No Sql Dbs: MongoDB, AWS DynamoDB etc.
+
+
+//API: Application programming Interface
+api, web api, http api, rest api, http endpoints 

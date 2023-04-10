@@ -1,4 +1,13 @@
+using Microsoft.AspNetCore.Identity;
+using WorkForceManagement.web.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<WorkForceContext>();
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<WorkForceContext>();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -23,5 +32,5 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapRazorPages();
 app.Run();

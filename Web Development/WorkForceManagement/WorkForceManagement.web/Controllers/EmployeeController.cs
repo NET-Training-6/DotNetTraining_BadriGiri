@@ -11,6 +11,7 @@ namespace WorkForceManagement.web.Controllers
 {
     public class EmployeeController : Controller
     {
+
         WorkForceContext db = new WorkForceContext();
 
         [HttpGet]
@@ -32,11 +33,16 @@ namespace WorkForceManagement.web.Controllers
         [HttpGet]
         public IActionResult Add() 
         {
+            //DropDown Of Department
             var departments=db.Departments.ToList();
             var depsSelectList = departments.Select(x => new SelectListItem { Text = x.Name, Value = x.ID.ToString() }).ToList();
             depsSelectList.Add(new SelectListItem { Text = "--Select Department--", Selected = true });
-
             ViewData["Deps"] = depsSelectList;
+
+            //var designations=db.DesignationsTable.ToList();
+            //var desSelectList = designations.Select(y => new SelectListItem { Text = y.Title, Value = y.PayRange });            
+            //ViewData["Des"]=desSelectList;
+
 
             return View();
             
@@ -70,6 +76,28 @@ namespace WorkForceManagement.web.Controllers
         {
             var employee = employeeViewModel.MapToModel();
             db.Employees.Remove(employee);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+           var employee= db.Employees.Find(id).MapToViewModel();
+
+            var departments = db.Departments.ToList();
+            var depsSelectList = departments.Select(x => new SelectListItem { Text = x.Name, Value = x.ID.ToString() }).ToList();
+            depsSelectList.Add(new SelectListItem { Text = "--Select Department--", Selected = true });
+
+            ViewData["Deps"] = depsSelectList;
+            return View(employee);
+        }
+        [HttpPost]
+        public IActionResult Edit(EmployeeViewModel employeeViewModel)
+        {
+            var employee = employeeViewModel.MapToModel();
+            db.Employees.Update(employee);
             db.SaveChanges();
 
             return RedirectToAction("Index");

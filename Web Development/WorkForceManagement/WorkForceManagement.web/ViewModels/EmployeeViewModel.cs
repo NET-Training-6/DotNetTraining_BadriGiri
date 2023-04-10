@@ -28,9 +28,7 @@ public class EmployeeViewModel
     public IFormFile? ProfileImage { get; set; }
 
     public string ProfileImagePath { get; set; } = string.Empty;
-    // public string Designation { get; set; } = string.Empty;
-
-
+    
     public int Department { get; set; }
     public string DepartmentName { get; set; }
 }
